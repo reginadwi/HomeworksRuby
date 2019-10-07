@@ -1,0 +1,40 @@
+<div class="p-3 mb-2 bg-info text-white">
+<center>
+<br>
+<h1 class="text-dark">Show </h1>
+<p id="notice"><%= notice %></p>
+
+<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+<p>
+  <h6><strong>Homework name :</strong> <br>
+    <%= @homework.homework_name %>
+  </h6>
+</p>
+<p>
+  <h6><strong>Category:</strong> <br>
+    <%= @homework.category.try(:name) %>
+  </h6>
+</p>
+<p>
+<h6>
+  <strong>Deadline:</strong><br>
+    <%= @homework.deadline %>
+  </h6>
+</p>
+<p>
+<h6>
+  <strong>Description:</strong><br>
+    <%= @homework.description %>
+  </h6>
+</p>
+<p>
+<h6>
+  <strong>Category:</strong>
+  <%= @homework.category_id %>
+  </h6>
+</p>
+
+<%= link_to 'Edit', edit_homework_path(@homework) %> 
+<%= link_to 'Back', homeworks_path %>
+</div>
+</center>

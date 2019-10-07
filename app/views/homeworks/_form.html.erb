@@ -1,0 +1,47 @@
+<%= form_with(model: homework, local: true) do |form| %>
+  <% if homework.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(homework.errors.count, "error") %> prohibited this homework from being saved:</h2>
+
+      <ul>
+        <% homework.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <br>
+ <center><h6>
+  <div class="field">
+      <%= form.label :homework_name %><br>
+      <%= form.text_area :homework_name, id: :homework_homework_category %>
+    </div>
+    <br>
+  <div class="field">
+      <%= form.label :category %><br>
+        <% if @homework.category.present? %>
+      <%= select_tag 'homework[category_id]', options_for_select(@category.collect { |c| [c.name, c.id] }, {:selected => @homework.category.id}) %>
+        <% else %>
+      <%= select_tag 'homework[category_id]', options_for_select(@category.collect { |c| [c.name, c.id] }) %>
+    <% end %>
+    
+</div>
+<br>
+
+  <div class="field"> 
+    <%= form.label :deadline %><br>
+    <%= form.date_select :deadline, id: :homework_deadline %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %><br>
+    <%= form.text_area :description, id: :homework_description %>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit %>
+    </h6>
+  </div>
+  
+<% end %>
+</center>

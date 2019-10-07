@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  homework_name: MyText
+  category: MyString
+  deadline: 2019-09-24
+  description: MyText
+  category_id: 1
+
+two:
+  homework_name: MyText
+  category: MyString
+  deadline: 2019-09-24
+  description: MyText
+  category_id: 1
